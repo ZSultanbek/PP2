@@ -1,0 +1,6 @@
+print (69 > 9)
+print (1 == 2)
+print (420 < 69)
+print (bool("NoMemes"))
+print (bool(0))
+print (bool(-1))
