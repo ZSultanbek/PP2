@@ -60,26 +60,29 @@ def nextpermutation(string):
     stemp = string
     i = len(string)-1
     j = len(string)-2
-    counter = 0
+    counter = -1
     minic = 0
     while i > 0:
+        counter += 1
+        if counter >= factorial(len(string)):
+            break
+
+        if j >= len(string) or j < ((-1) * len(string)):
+            j = len(string)-2
         stemp[j], stemp[i] = stemp[i], stemp[j]
         j -= 1
         minic += 1
 
         if stemp not in perms:
             perms = stemp
-            print(perms)
-            break
+            print(perms, counter)
+            continue
 
         if j+minic != i and minic > 4:
             j = i-1
                 
-        if counter >= factorial(len(string)):
-            break
-        counter += 1
     return perms
-string = ["2", "1", "0"]
+string = ["4", "4", "1", "0"]
 print (string)
 string = nextpermutation(string)
 '''
@@ -192,7 +195,7 @@ name = input("Hello! What is your name?\n")
 guess = int(input("Well, {0}, I am thinking of a number between 1 and 20.\nTake a guess.\n".format(name)))
 
 number = random.randrange(1, 21)
-counter = 0
+counter = 1
 while guess != number:
     if guess > number:
         print("Your guess is too high.")
