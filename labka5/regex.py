@@ -1,7 +1,7 @@
 import re
 text = open(r"labka5\raw.txt", encoding="utf8")
 txt = " ".join((str(text.read())).split("\n"))
-
+txt1 = txt
 
 #1________________________________
 print("1______________________")
@@ -50,20 +50,22 @@ print("8______________________")
 def SplitAtUppercase(input_string):
     return re.split(r'(?=[A-Z])', input_string)
 txt = SplitAtUppercase(txt)
+txt = " ".join(txt)
 print(txt)
-
 #9________________________________
 print("9______________________")
 def InsertSpacesAtCaps(input_string):
     return re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', input_string)
 txt = InsertSpacesAtCaps(txt)
+txt = " ".join(txt)
 print(txt)
 
 #10_______________________________
 print("10______________________")
 def CamelCase_to_snake_case(camel_case):
     return re.sub(r'([a-z0-9])([A-Z])', r'\1_\2', camel_case).lower()
-txt = CamelCase_to_snake_case(txt)
+txt1 = CamelCase_to_snake_case(txt1)
+txt1 = " ".join(txt1)
 
 text.close()
-print(txt)
+print(txt1)
