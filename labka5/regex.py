@@ -34,7 +34,7 @@ print(a_b)
 print("6______________________")
 def ReplaceWithColon(input_string):
     return re.sub("[ ,.]", ":", input_string)
-ReplaceWithColon(txt)
+txt = ReplaceWithColon(txt)
 print(txt)
 
 #7________________________________
@@ -42,28 +42,28 @@ print("7______________________")
 def Snake_case_toCamelCase(snake_case):
     words = snake_case.split('_')
     return words[0] + ''.join(word.capitalize() for word in words[1:])
-Snake_case_toCamelCase(txt)
+txt = Snake_case_toCamelCase(txt)
 print(txt)
 
 #8________________________________
 print("8______________________")
 def SplitAtUppercase(input_string):
     return re.split(r'(?=[A-Z])', input_string)
-SplitAtUppercase(txt)
+txt = SplitAtUppercase(txt)
 print(txt)
 
 #9________________________________
 print("9______________________")
 def InsertSpacesAtCaps(input_string):
     return re.sub(r'(?<=[a-z])(?=[A-Z])', ' ', input_string)
-InsertSpacesAtCaps(txt)
+txt = InsertSpacesAtCaps(txt)
 print(txt)
 
 #10_______________________________
 print("10______________________")
 def CamelCase_to_snake_case(camel_case):
     return re.sub(r'([a-z0-9])([A-Z])', r'\1_\2', camel_case).lower()
-CamelCase_to_snake_case(txt)
+txt = CamelCase_to_snake_case(txt)
 
 text.close()
 print(txt)
